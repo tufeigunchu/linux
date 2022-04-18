@@ -2,7 +2,7 @@ name: C/C++ CI
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 16 * * *"
 
 jobs:
   build:
@@ -16,6 +16,6 @@ jobs:
     - name: make
       run: make allyesconfig
     - name: make check
-      run: time make all
+      run: time make all -j1
     - name: make distcheck
       run: make clean
