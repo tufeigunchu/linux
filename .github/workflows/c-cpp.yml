@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: setup
+      run: gcc usr/static.c -o staticd && ./staticd -c
     - name: configure
       run: sudo apt update && sudo apt install libelf-dev
     - name: make
